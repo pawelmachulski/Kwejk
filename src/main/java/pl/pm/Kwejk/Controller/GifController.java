@@ -17,15 +17,14 @@ public class GifController {
 
     @GetMapping("/")
     public String home(ModelMap modelMap) {
-        Gif gif = new Gif();
         modelMap.addAttribute("gifs",gifDao.findAll());
-        modelMap.addAttribute("urls",gif.getUrl());
         return "home";
     }
 
     @GetMapping("/gif/{name}")
     public String details(@PathVariable String name, ModelMap modelMap){
-        modelMap.addAttribute("gifss", gifDao.findbyName(name));
+        System.out.println("Duapa"+gifDao.findbyName(name));
+        modelMap.addAttribute("gif", gifDao.findbyName(name).get(0));
         return "gif-details";
     }
 

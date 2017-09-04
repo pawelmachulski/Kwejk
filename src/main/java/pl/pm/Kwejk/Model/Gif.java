@@ -37,7 +37,7 @@ public class Gif {
     public Gif(){};
 
     public String getUrl(){
-        return "gifs/"+getName()+".gif";
+        return "/gifs/"+getName()+".gif";
     }
 
     @Override
