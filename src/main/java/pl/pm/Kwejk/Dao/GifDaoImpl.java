@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class GifDaoImpl implements GifDao {
 
 static List<Gif> gifs = new ArrayList<>();
-static List<Gif> getGifs () {return gifs;};
 static{
     gifs.add(new Gif("android-explosion", "ktp"));
     gifs.add(new Gif("ben-and-mike","pwl"));

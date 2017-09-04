@@ -36,12 +36,12 @@ public class Gif {
 
     public Gif(){};
 
+    public String getUrl(){
+        return "gifs/"+getName()+".gif";
+    }
 
     @Override
     public String toString() {
-        return "Gif{" +
-                "name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                '}';
+        return name + " " + username;
     }
 }
