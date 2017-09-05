@@ -12,7 +12,7 @@ public class GifDaoImpl implements GifDao {
 
 static List<Gif> gifs = new ArrayList<>();
 static{
-    gifs.add(new Gif("android-explosion", "ktp"));
+    gifs.add(new Gif("android-explosion", "and"));
     gifs.add(new Gif("ben-and-mike","pwl"));
     gifs.add(new Gif("book-dominos","kml"));
     gifs.add(new Gif("compiler-bot","gif"));
