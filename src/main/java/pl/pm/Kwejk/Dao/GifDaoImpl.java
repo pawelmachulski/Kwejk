@@ -1,6 +1,7 @@
 package pl.pm.Kwejk.Dao;
 
 import org.springframework.stereotype.Component;
+import pl.pm.Kwejk.Model.Category;
 import pl.pm.Kwejk.Model.Gif;
 
 import java.util.ArrayList;
@@ -20,6 +21,18 @@ static{
     gifs.add(new Gif("infinite-andrew","qwe"));
 }
 
+    static List<Category> categories = new ArrayList<>();
+    static{
+        categories.add(new Category(1,"śmieszne"));
+        categories.add(new Category(2, "czarny humor"));
+        categories.add(new Category(3, "nieśmieszne"));
+    }
+
+    @Override
+    public List<Category> findAllCat() {
+        return categories;
+    }
+
     @Override
     public List<Gif> findAll() {
     return gifs;
@@ -29,5 +42,7 @@ static{
     public List<Gif> findbyName(String name) {
         return gifs.stream().filter((p)->p.getName().equals(name)).collect(Collectors.toList());
     }
+
+
 
 }

@@ -6,7 +6,6 @@ public class Gif {
 
     private String name;
     private String username;
-    private boolean like;
 
 
     public String getName() {
