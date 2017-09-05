@@ -1,6 +1,7 @@
 package pl.pm.Kwejk.Dao;
 
 import org.springframework.stereotype.Component;
+import pl.pm.Kwejk.Model.Category;
 import pl.pm.Kwejk.Model.Gif;
 
 import java.util.ArrayList;
@@ -10,15 +11,25 @@ import java.util.stream.Collectors;
 @Component
 public class GifDaoImpl implements GifDao {
 
+
     static List<Gif> gifs = new ArrayList<>();
+    static List<Category> categories = new ArrayList<>();
 
     static {
-        gifs.add(new Gif("android-explosion", "ktp", true));
+        gifs.add(new Gif("android-explosion", "and", true));
         gifs.add(new Gif("ben-and-mike", "pwl", true));
-        gifs.add(new Gif("book-dominos", "kml", false));
-        gifs.add(new Gif("compiler-bot", "gif", false));
-        gifs.add(new Gif("cowboy-coder", "adi", true));
-        gifs.add(new Gif("infinite-andrew", "qwe", false));
+        gifs.add(new Gif("book-dominos", "kml", true));
+        gifs.add(new Gif("compiler-bot", "gif",false));
+        gifs.add(new Gif("cowboy-coder", "adi",false));
+        gifs.add(new Gif("infinite-andrew", "qwe",false));
+        categories.add(new Category(1, "śmieszne"));
+        categories.add(new Category(2, "czarny humor"));
+        categories.add(new Category(3, "nieśmieszne"));
+    }
+
+    @Override
+    public List<Category> findAllCat() {
+        return categories;
     }
 
     @Override
@@ -36,6 +47,7 @@ public class GifDaoImpl implements GifDao {
     public List<Gif> isLike(boolean like) {
         return gifs.stream().filter((l) -> l.getLike() == like).collect(Collectors.toList());
     }
+
 
 }
 
