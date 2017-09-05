@@ -39,7 +39,9 @@
                 <form action="/results" method="get">
                     <div class="input-field">
                         <input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>
-                        <i class="material-icons">search</i>
+
+                        <input type="submit" value="&#8981;">
+                        <!--<i class="material-icons">search</i>-->
                     </div>
                 </form>
             </div>
@@ -50,9 +52,12 @@
             <ul>
                 <div class="col s12 l6" th:each="gif : ${gifs}">
                     <img th:src="@{${gif.getUrl()}}" alt="gif"><br>
+                    <p th:text="${gif.name}"</p>
+
                 </div>
                 <div class="col s12 l4" th:each="gif : ${gifss}">
                     <img th:src="@{${gif.getUrl()}}" alt="gif"><br>
+                    <p th:text="${gif.username}"</p>
                 </div>
             </ul>
         </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -48,6 +48,7 @@
             <div class="col s12">
                 <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" alt="gif" />
                 <!--<a href="#" th:class="(${gif.favorite} ? 'un' : '') + 'mark favorite'"></a>-->
+                <p th:text="${gif.username}"</p>
             </div>
         </div>
         <div class="row">
@@ -56,8 +57,8 @@
                     <div class="col s3">
                         <img class="circle" src="http://api.adorable.io/avatars/205/avatar" alt="avatar" />
                     </div>
-                    <div class="col s9">
-                        
+                    <p class="col s9">
+
                     </div>
                 </div>
             </div>
