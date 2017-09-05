@@ -50,15 +50,18 @@
     <div class="gifs container">
         <div class="row">
             <ul>
-                <div class="col s12 l6" th:each="gif : ${gifs}">
+
+                <p th:if="${comment}" th:text="${comment}"></p>
+
+                <div class="col s12 l4" th:each="gif : ${gifss}">
                     <img th:src="@{${gif.getUrl()}}" alt="gif"><br>
                     <p th:text="${gif.name}"</p>
-
                 </div>
-                <div class="col s12 l4" th:each="gif : ${gifss}">
+                <div class="col s12 l6" th:each="gif : ${gifs}">
                     <img th:src="@{${gif.getUrl()}}" alt="gif"><br>
                     <p th:text="${gif.username}"</p>
                 </div>
+
             </ul>
         </div>
     </div>
