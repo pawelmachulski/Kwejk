@@ -11,7 +11,21 @@ public class Gif {
 
     private String name;
     private String username;
+    private Boolean like;
 
+    public Gif(String name, String username, Boolean like) {
+        this.name = name;
+        this.username = username;
+        this.like = like;
+    }
+
+    public Boolean getLike() {
+        return like;
+    }
+
+    public void setLike(Boolean like) {
+        this.like = like;
+    }
 
     public String getName() {
         return name;
@@ -42,6 +56,10 @@ public class Gif {
 
     @Override
     public String toString() {
-        return name + " " + username;
+        return name + " " + username+" "+like;
     }
-}
+
+
+
+    }
+

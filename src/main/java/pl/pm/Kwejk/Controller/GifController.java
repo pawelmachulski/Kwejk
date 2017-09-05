@@ -19,13 +19,17 @@ public class GifController {
     public String home(ModelMap modelMap) {
         modelMap.addAttribute("gifs",gifDao.findAll());
         return "home";
-    }
+    }/* metoda modelMap dodaje atrybuty do serwera ,które zaciąga z interfejsu
+    gifDao a dokłądnie z metody zawartej w tym interfejsie gifdao.findAll*/
 
     @GetMapping("/gif/{name}")
     public String details(@PathVariable String name, ModelMap modelMap){
-        System.out.println("Duapa"+gifDao.findbyName(name));
         modelMap.addAttribute("gif", gifDao.findbyName(name).get(0));
         return "gif-details";
-    }
-
+    }   //details i home - to metody kontrolera
+@GetMapping("/favorites")
+    public String favorite(ModelMap modelMap){
+        modelMap.addAttribute("gifLike",gifDao.isLike(true));
+        return "favorites";
+}
 }
