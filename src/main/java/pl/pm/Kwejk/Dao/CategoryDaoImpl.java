@@ -5,6 +5,7 @@ import pl.pm.Kwejk.Model.Category;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CategoryDaoImpl implements CategoryDao{
@@ -21,4 +22,8 @@ public class CategoryDaoImpl implements CategoryDao{
         return categories;
     }
 
+
+    public static List<Category> getCategories() {
+        return categories;
+    }
 }
