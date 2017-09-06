@@ -68,7 +68,5 @@ public class Gif {
         return name + " " + username+" "+like;
     }
 
-
-
     }
 

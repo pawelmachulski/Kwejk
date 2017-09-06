@@ -33,7 +33,6 @@ public class GifDaoImpl implements GifDao {
         return gifs.stream().filter((p) -> p.getName().equals(name)).collect(Collectors.toList());
     }// z listy gifs
 
-
     @Override
     public List<Gif> isLike(boolean like) {
         return gifs.stream().filter((l) -> l.getLike() == like).collect(Collectors.toList());

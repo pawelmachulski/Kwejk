@@ -15,6 +15,8 @@ public class GifController {
 
     @Autowired
     private GifDao gifDao;
+    @Autowired
+    private CategoryDao categoryDao;
 
     @GetMapping("/")
     public String home(ModelMap modelMap) {
@@ -30,7 +32,6 @@ public class GifController {
 
     @GetMapping("/favorites")
     public String favorite(ModelMap modelMap) {
-        System.out.println("Dupa"+gifDao.isLike(true));
         modelMap.addAttribute("gifLike", gifDao.isLike(true));
         return "favorites";
     }
