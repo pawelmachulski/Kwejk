@@ -15,10 +15,27 @@
 <body>
 <div th:include="fragment :: layout"></div>
 
+<div class="categories container">
+    <div class="row">
+        <div th:each="category : ${categories}" class="col s12 l4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <a th:href="@{'/category/' + ${category.id}}" th:text="${category.name}">Category Name</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
     <div class="gifs container">
         <div class="row">
             <ul>
                 <p th:if="${comment}" th:text="${comment}"></p>
+
 
                 <div class="col s12 l4" th:each="gif : ${gifss}">
                     <img th:src="@{${gif.getUrl()}}" alt="gif"><br>

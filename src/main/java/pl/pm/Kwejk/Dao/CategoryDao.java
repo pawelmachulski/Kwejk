@@ -8,4 +8,5 @@ public interface CategoryDao {
 
     List<Category> findAllCat();
     List<Category> findCatById(int name);
+    List<Category> findCatByName(String name);
 }

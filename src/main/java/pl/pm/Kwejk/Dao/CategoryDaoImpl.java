@@ -28,6 +28,11 @@ public class CategoryDaoImpl implements CategoryDao{
         return categories.stream().filter((d -> d.getCatId() == id)).collect(Collectors.toList());
     }
 
+    @Override
+    public List<Category> findCatByName(String name) {
+        return categories.stream().filter((p) -> p.getName().equals(name)).collect(Collectors.toList());
+    }
+
     public static List<Category> getCategories() {
         return categories;
     }

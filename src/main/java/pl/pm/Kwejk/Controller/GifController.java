@@ -40,7 +40,8 @@ public class GifController {
     @GetMapping("/results")
     public String search(@RequestParam String q, ModelMap modelMap) {
         modelMap.addAttribute("gifss", gifDao.findbyName(q));
-        if(gifDao.findbyName(q).isEmpty()) {
+        modelMap.addAttribute("categories", categoryDao.findCatByName(q));
+        if(gifDao.findbyName(q).isEmpty() && categoryDao.findCatByName(q).isEmpty()) {
             modelMap.addAttribute("comment", "Nie znaleziono");
         }
         return "home";
