@@ -9,5 +9,4 @@ public interface GifDao {
     List<Gif> findAll();
     List<Gif> findbyName(String name);
     List<Gif> isLike(boolean like);
-    List<Category> findAllCat();
 }

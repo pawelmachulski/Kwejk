@@ -11,26 +11,17 @@ import java.util.stream.Collectors;
 @Component
 public class GifDaoImpl implements GifDao {
 
-
     static List<Gif> gifs = new ArrayList<>();
-    static List<Category> categories = new ArrayList<>();
 
     static {
         gifs.add(new Gif("android-explosion", "and", true));
         gifs.add(new Gif("ben-and-mike", "pwl", true));
         gifs.add(new Gif("book-dominos", "kml", true));
-        gifs.add(new Gif("compiler-bot", "gif",false));
-        gifs.add(new Gif("cowboy-coder", "adi",false));
-        gifs.add(new Gif("infinite-andrew", "qwe",false));
-        categories.add(new Category(1, "śmieszne"));
-        categories.add(new Category(2, "czarny humor"));
-        categories.add(new Category(3, "nieśmieszne"));
+        gifs.add(new Gif("compiler-bot", "gif", false));
+        gifs.add(new Gif("cowboy-coder", "adi", false));
+        gifs.add(new Gif("infinite-andrew", "qwe", false));
     }
 
-    @Override
-    public List<Category> findAllCat() {
-        return categories;
-    }
 
     @Override
     public List<Gif> findAll() {
