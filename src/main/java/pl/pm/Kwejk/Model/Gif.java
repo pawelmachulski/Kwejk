@@ -8,11 +8,25 @@ public class Gif {
     private String username;
     private Boolean like;
 
-    public Gif(String name, String username, Boolean like) {
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    private int categoryId;
+
+
+    public Gif(String name, String username, Boolean like, int c) {
         this.name = name;
         this.username = username;
         this.like = like;
+        this.categoryId = c;
     }
+
+
 
     public Boolean getLike() {
         return like;

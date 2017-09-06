@@ -2,9 +2,11 @@ package pl.pm.Kwejk.Dao;
 
 import org.springframework.stereotype.Component;
 import pl.pm.Kwejk.Model.Category;
+import pl.pm.Kwejk.Model.Gif;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CategoryDaoImpl implements CategoryDao{
@@ -21,4 +23,11 @@ public class CategoryDaoImpl implements CategoryDao{
         return categories;
     }
 
+    @Override
+    public List<Category> findCatById(int id) {
+        return categories.stream().filter((d -> d.getCatId() == id)).collect(Collectors.toList());
+    }
+
+
 }
+

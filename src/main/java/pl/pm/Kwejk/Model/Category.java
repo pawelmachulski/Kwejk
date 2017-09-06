@@ -5,6 +5,19 @@ import org.springframework.stereotype.Component;
 public class Category {
     private int id;
     private String name;
+    public int catId;
+
+    public Category(int catId) {
+        this.catId = catId;
+    }
+
+    public int getCatId() {
+        return catId;
+    }
+
+    public void setCatId(int catId) {
+        this.catId = catId;
+    }
 
     public int getId() {
         return id;
@@ -32,6 +45,6 @@ public class Category {
         return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                '}';
+                '}'+catId;
     }
 }
