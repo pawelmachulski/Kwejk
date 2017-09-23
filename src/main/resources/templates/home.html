@@ -44,7 +44,6 @@
                 </div>
                 <div class="col s12 l6" th:each="gif : ${gifs}">
                     <img th:src="@{${gif.getUrl()}}" alt="gif"><br>
-                    <p th:text="${gif.name}"</p>
                 </div>
 
             </ul>
